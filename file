@@ -1,0 +1,48 @@
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+}
+let a=getRandomInt(5, 15);
+let b=getRandomInt(5, 15);
+
+document.getElementById("first").innerHTML = a;
+document.getElementById("second").innerHTML = b;
+
+document.getElementById("qwer").onclick=function()
+{
+	let result;
+	if(a<10 & b<10)
+	{
+		if (a >= b)
+		{
+			let c = 10-a;
+			let d = b-c;
+			result = a + "+("+c+"+"+d+")";
+		}
+		if (a < b)
+		{
+			let c = 10-b;
+			let d = a-c;
+			result = "("+d+"+"+c+")+"+b;
+		}
+	}
+	else if ((a + b)>20)
+	{
+		if (a >= b)
+		{
+			let c = 20-a;
+			let d = b-c;
+			result = a + "+("+c+"+"+d+")";
+		}
+		if (a < b)
+		{
+			let c = 20-b;
+			let d = a-c;
+			result = "("+d+"+"+c+")+"+b;
+		}
+	}
+	
+	
+	document.getElementById("three").innerHTML=result;
+}
